@@ -10,4 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcpy(char *dest, char *src);
+#include <stddef.h>
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	char	*ret;
+
+	ret = dest;
+	if (!dest || !src)
+		return (NULL);
+	while (*src)
+	{
+		*dest = *src;
+		++dest;
+		++src;
+	}
+	*dest = '\0';
+	return (ret);
+}
