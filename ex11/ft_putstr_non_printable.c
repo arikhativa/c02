@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 15:49:23 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/22 13:39:21 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/22 15:59:26 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_hex(int n)
 
 int	is_printable(char ch)
 {
-	return (ch >= 32 && ch != 127);
+	return (ch > 32 && ch != 127);
 }
 
 void	ft_putstr_non_printable(char *str)

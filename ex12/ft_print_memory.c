@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:32:13 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/22 14:13:48 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/22 16:00:07 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putnstr(char *str, int n)
 		return ;
 	while (i < n && *str)
 	{
-		if (*str >= 32 && *str != 127)
+		if (*str > 32 && *str != 127)
 			ft_putchar(*str);
 		else
 			ft_putchar('.');
