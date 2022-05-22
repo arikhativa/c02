@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:57:39 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/20 12:22:40 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/22 14:16:09 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ int	is_upcase(char ch)
 	return (ch >= 'A' && ch <= 'Z');
 }
 
-char *ft_strlowcase(char *str)
+char	*ft_strlowcase(char *str)
 {
-	char *ret;
+	char	*ret;
 
 	ret = str;
 	if (!str)
