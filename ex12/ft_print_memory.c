@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:32:13 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/23 12:46:53 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/23 15:59:58 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putchar(unsigned char c)
 
 void	ft_putnbytes(unsigned char *str, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	if (!str)
