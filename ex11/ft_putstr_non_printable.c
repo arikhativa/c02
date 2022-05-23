@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 15:49:23 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/22 15:59:26 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/23 12:28:44 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 #define BASE 16
 
-void	ft_putchar(char c)
+void	ft_putchar(unsigned char c)
 {
 	write(1, &c, 1);
 }
 
-void	print_hex(int n)
+void	print_hex(unsigned char n)
 {
 	if (n / BASE)
 	{
@@ -32,25 +32,29 @@ void	print_hex(int n)
 		ft_putchar(n + 'a' - 10);
 }
 
-int	is_printable(char ch)
+int	is_printable(unsigned char ch)
 {
-	return (ch > 32 && ch != 127);
+	return (ch >= 32 && ch < 127);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	if (!str)
+	unsigned char	*s;
+
+	s = (unsigned char *)str;
+	if (!s)
 		return ;
-	while (*str)
+	while (*s)
 	{
-		if (!is_printable(*str))
+		if (!is_printable(*s))
 		{
 			ft_putchar('\\');
-			ft_putchar('0');
-			print_hex(*str);
+			if (*s < 16)
+				ft_putchar('0');
+			print_hex(*s);
 		}
 		else
-			ft_putchar(*str);
-		++str;
+			ft_putchar(*s);
+		++s;
 	}
 }

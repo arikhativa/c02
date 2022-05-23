@@ -6,7 +6,7 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:32:13 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/22 16:00:07 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/23 12:46:53 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 #define BASE 16
 
-void	ft_putchar(char c)
+void	ft_putchar(unsigned char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnstr(char *str, int n)
+void	ft_putnbytes(unsigned char *str, unsigned int n)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
 		return ;
-	while (i < n && *str)
+	while (i < n)
 	{
-		if (*str > 32 && *str != 127)
+		if (*str >= 32 && *str < 127)
 			ft_putchar(*str);
 		else
 			ft_putchar('.');
@@ -50,13 +50,13 @@ void	print_hex(unsigned long n)
 		ft_putchar(n + 'a' - 10);
 }
 
-int	print_char_as_hex(char *s, unsigned int size)
+int	print_char_as_hex(unsigned char *s, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
-	while (s[i] && i < size && i < 16)
+	while (i < size && i < 16)
 	{
 		if (s[i] < BASE)
 			ft_putchar('0');
@@ -79,7 +79,7 @@ int	print_char_as_hex(char *s, unsigned int size)
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	char			*s;
+	unsigned char	*s;
 	unsigned int	i;
 
 	s = addr;
@@ -89,7 +89,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 		ft_putchar(':');
 		ft_putchar(' ');
 		i = print_char_as_hex(s, size);
-		ft_putnstr(s, i);
+		ft_putnbytes(s, i);
 		ft_putchar('\n');
 		size -= i;
 		s += i;

@@ -6,13 +6,13 @@
 /*   By: yrabby <yrabby@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 15:45:10 by yrabby            #+#    #+#             */
-/*   Updated: 2022/05/22 15:59:16 by yrabby           ###   ########.fr       */
+/*   Updated: 2022/05/23 12:02:44 by yrabby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_printable(char ch)
 {
-	return (ch > 32 && ch != 127);
+	return (ch >= 32 && ch != 127);
 }
 
 int	ft_str_is_printable(char *str)
